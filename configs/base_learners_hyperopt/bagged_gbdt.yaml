@@ -1,0 +1,130 @@
+dataset:
+  name: cwz
+  target: DIAGNOSIS
+  should_aggregate: false
+  use_visual_features: true
+  use_clinical_features: true
+  feature_value_fraction_required: 0.16
+  metrics:
+    - accuracy
+    - roc_auc
+  early_stopping:
+    metric: roc_auc
+    cv:
+      test_size: 0.2
+  validation:
+    metric: roc_auc
+    cv:
+      n_folds: 5
+      n_repeats: 5
+  test:
+    cv:
+      test_size: 0.2
+      seed: 123
+
+n_trials: 10
+
+pipeline:
+  estimator_type: LGBM
+  should_stop_early: false
+  n_bagging: 60
+  imputation:
+    categorical: NONE
+    numeric: NONE
+  feature_selection:
+    fs_type: NONE
+
+parameters:
+  base_estimator:
+    estimator:
+      boosting: gbdt
+      n_estimators:
+        distribution: RANDINT
+        default: 15
+        vmin: 2
+        vmax: 50
+      learning_rate:
+        distribution: LOG_UNIFORM
+        default: 0.4
+        vmin: 1e-20
+        vmax: 1
+      max_depth:
+        distribution: RANDINT
+        default: 0
+        vmin: 0
+        vmax: 30
+      num_leaves:
+        distribution: RANDINT
+        default: 31
+        vmin: 2
+        vmax: 280
+      reg_alpha:
+        distribution: LOG_UNIFORM
+        default: 1e-20
+        vmin: 1e-20
+        vmax: 1e2
+      reg_lambda:
+        distribution: LOG_UNIFORM
+        default: 1e-20
+        vmin: 1e-20
+        vmax: 1e3
+      subsample:
+        distribution: UNIFORM
+        default: 1.0
+        vmin: 0.01
+        vmax: 1.0
+      subsample_freq:
+        distribution: RANDINT
+        default: 0
+        vmin: 0
+        vmax: 30
+      min_child_samples:
+        distribution: RANDINT
+        default: 20
+        vmin: 0
+        vmax: 50
+      max_bin:
+        distribution: RANDINT
+        default: 255
+        vmin: 3
+        vmax: 500
+      extra_trees:
+        distribution: CATEGORICAL
+        default: false
+        values:
+          - true
+          - false
+      path_smooth:
+        distribution: LOG_UNIFORM
+        default: 1e-20
+        vmin: 1e-20
+        vmax: 100
+      colsample_bytree:
+        distribution: UNIFORM
+        default: 1.0
+        vmin: 0.005
+        vmax: 1.0
+      linear_tree:
+        distribution: CATEGORICAL
+        default: false
+        values:
+          - true
+          - false
+      feature_fraction_bynode:
+        distribution: UNIFORM
+        default: 1.0
+        vmin: 0.005
+        vmax: 1.0
+      min_gain_to_split:
+        distribution: LOG_UNIFORM
+        default: 1e-20
+        vmin: 1e-20
+        vmax: 100
+      min_sum_hessian_in_leaf:
+        distribution: LOG_UNIFORM
+        default: 1e-3
+        vmin: 1e-10
+        vmax: 1e3
+
+meta:
+  model: BaggedGBDT

@@ -1,0 +1,12 @@
+\begin{tabular}{lll}
+\toprule
+Parameter & Distribution &    Distribution parameters \\
+\midrule
+   solver &     Constant &                       saga \\
+  penalty &  Categorical & One of: l1, l2, elasticnet \\
+      tol &  Log-uniform &     Between 1e-10 and 0.01 \\
+        C &  Log-uniform &    Between 1e-05 and 100.0 \\
+ l1\_ratio &      Uniform &        Between 0.0 and 1.0 \\
+ max\_iter &     Constant &                       1000 \\
+\bottomrule
+\end{tabular}

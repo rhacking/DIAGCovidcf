@@ -1,0 +1,24 @@
+\begin{tabular}{lll}
+\toprule
+              Parameter &    Distribution &  Distribution parameters \\
+\midrule
+               boosting &        Constant &                     gbdt \\
+           n\_estimators & Uniform integer &         Between 2 and 50 \\
+          learning\_rate &     Log-uniform &    Between 1e-20 and 1.0 \\
+              max\_depth & Uniform integer &         Between 0 and 30 \\
+             num\_leaves & Uniform integer &        Between 2 and 280 \\
+              reg\_alpha &     Log-uniform &  Between 1e-20 and 100.0 \\
+             reg\_lambda &     Log-uniform & Between 1e-20 and 1000.0 \\
+              subsample &         Uniform &     Between 0.01 and 1.0 \\
+         subsample\_freq & Uniform integer &         Between 0 and 30 \\
+      min\_child\_samples & Uniform integer &         Between 0 and 50 \\
+                max\_bin & Uniform integer &        Between 3 and 500 \\
+            extra\_trees &     Categorical &      One of: True, False \\
+            path\_smooth &     Log-uniform &  Between 1e-20 and 100.0 \\
+       colsample\_bytree &         Uniform &    Between 0.005 and 1.0 \\
+            linear\_tree &     Categorical &      One of: True, False \\
+feature\_fraction\_bynode &         Uniform &    Between 0.005 and 1.0 \\
+      min\_gain\_to\_split &     Log-uniform &  Between 1e-20 and 100.0 \\
+min\_sum\_hessian\_in\_leaf &     Log-uniform & Between 1e-10 and 1000.0 \\
+\bottomrule
+\end{tabular}

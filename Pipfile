@@ -1,0 +1,21 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+click = "*"
+requests = "*"
+pandas = "*"
+tqdm = "*"
+lightgbm = "*"
+seaborn = "*"
+scikit-optimize = "*"
+scikit-learn = "==0.23.2"
+scipy = "==1.5.3"
+probatus = "*"
+
+[requires]
+python_version = "3.7"

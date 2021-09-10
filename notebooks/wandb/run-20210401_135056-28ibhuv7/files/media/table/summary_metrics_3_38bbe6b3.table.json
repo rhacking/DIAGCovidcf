@@ -1,0 +1,1 @@
+{"columns": ["metric_name", "metric_value", "model_name"], "data": [["accuracy_score", 0.93, "DecisionTreeClassifier"], ["precision", 0.95, "DecisionTreeClassifier"], ["recall", 0.93, "DecisionTreeClassifier"], ["f1_score", 0.94, "DecisionTreeClassifier"]]}

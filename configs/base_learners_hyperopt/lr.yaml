@@ -1,0 +1,63 @@
+dataset:
+  name: cwz
+  target: DIAGNOSIS
+  should_aggregate: false
+  use_visual_features: true
+  use_clinical_features: true
+  feature_value_fraction_required: 0.16
+  metrics:
+    - accuracy
+    - roc_auc
+  early_stopping:
+    metric: roc_auc
+    cv:
+      test_size: 0.01
+  validation:
+    metric: roc_auc
+    cv:
+      n_folds: 5
+      n_repeats: 5
+  test:
+    cv:
+      test_size: 0.2
+      seed: 123
+
+n_trials: 10
+
+pipeline:
+  estimator_type: LR
+  imputation:
+    categorical: CONSTANT
+    numeric: MEAN
+  feature_selection:
+    fs_type: NONE
+
+parameters:
+  estimator:
+    solver: saga
+    penalty:
+      distribution: CATEGORICAL
+      default: l2
+      values:
+        - l1
+        - l2
+        - elasticnet
+    tol:
+      distribution: LOG_UNIFORM
+      default: 1e-4
+      vmin: 1e-10
+      vmax: 1e-2
+    C:
+      distribution: LOG_UNIFORM
+      default: 1.0
+      vmin: 1e-5
+      vmax: 1e2
+    l1_ratio:
+      distribution: UNIFORM
+      default: 0.5
+      vmin: 0
+      vmax: 1
+    max_iter: 1000
+
+meta:
+  model: LR

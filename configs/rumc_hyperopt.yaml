@@ -1,0 +1,86 @@
+dataset:
+  name: rumc
+  target: CORADS
+  evaluation:
+    part: val
+    metrics:
+      - corads_roc_auc
+
+preprocessing:
+  should_aggregate: true
+  imputation:
+    categorical: CONSTANT
+    numeric: MEAN
+  feature_selection:
+    fs_type: SFM
+    threshold: -inf
+
+
+model_parameters:
+  boosting_type:
+    distribution: CATEGORICAL
+    values:
+      - dart
+      - gbdt
+  n_estimators:
+    distribution: RANDINT
+    vmin: 2
+    vmax: 500
+  learning_rate:
+    distribution: LOG_UNIFORM
+    vmin: 1e-20
+    vmax: 1
+  max_depth:
+    distribution: RANDINT
+    vmin: 1
+    vmax: 30
+  num_leaves:
+    distribution: RANDINT
+    vmin: 2
+    vmax: 280
+  reg_alpha:
+    distribution: LOG_UNIFORM
+    vmin: 1e-9
+    vmax: 1e2
+  reg_lambda:
+    distribution: LOG_UNIFORM
+    vmin: 1e-9
+    vmax: 1e3
+  subsample:
+    distribution: UNIFORM
+    vmin: 0.01
+    vmax: 1.0
+  subsample_freq:
+    distribution: RANDINT
+    vmin: 0
+    vmax: 30
+  min_child_samples:
+    distribution: RANDINT
+    vmin: 0
+    vmax: 30
+  max_bin:
+    distribution: RANDINT
+    vmin: 3
+    vmax: 500
+  extra_trees:
+    distribution: CATEGORICAL
+    values:
+      - true
+      - false
+  path_smooth:
+    distribution: LOG_UNIFORM
+    vmin: 1e-12
+    vmax: 100
+  colsample_bytree:
+    distribution: UNIFORM
+    vmin: 0.01
+    vmax: 1.0
+  linear_tree:
+    distribution: CATEGORICAL
+    values:
+      - true
+      - false
+
+n_trials: 800
+study_name: rumc_hyperopt_test
+optimization_metric: corads_roc_auc

@@ -1,0 +1,134 @@
+name: test-sweep
+method: bayes
+metric:
+  name: cv_val_roc_auc
+  goal: maximize
+parameters:
+  dataset.should_aggregate:
+    distribution: categorical
+    values:
+      - true
+      - false
+#  dataset.use_visual_features:
+#    distribution: categorical
+#    values:
+#      - true
+#      - false
+#  dataset.use_clinical_features:
+#    distribution: categorical
+#    values:
+#      - true
+#      - false
+#  dataset.feature_value_fraction_required:
+#    distribution: uniform
+#    min: 0.075
+#    max: 0.5
+  pipeline.imputation.numeric:
+    distribution: categorical
+    values:
+      - NONE
+  pipeline.imputation.categorical:
+    distribution: categorical
+    values:
+      - NONE
+  pipeline.feature_selection.fs_type:
+    distribution: categorical
+    values:
+      - NONE
+  boosting_type:
+    distribution: categorical
+    values:
+      - dart
+      - gbdt
+  n_estimators:
+    distribution: int_uniform
+    min: 2
+    max: 800
+  learning_rate:
+    distribution: log_uniform
+    min: -20
+    max: 0
+  max_depth:
+    distribution: int_uniform
+    min: 0
+    max: 30
+  num_leaves:
+    distribution: int_uniform
+    min: 2
+    max: 280
+  reg_alpha:
+    distribution: log_uniform
+    min: -20
+    max: 2
+  reg_lambda:
+    distribution: log_uniform
+    min: -20
+    max: 3
+  subsample:
+    distribution: uniform
+    min: 0.01
+    max: 1.0
+  subsample_freq:
+    distribution: int_uniform
+    min: 0
+    max: 30
+  min_child_samples:
+    distribution: int_uniform
+    min: 0
+    max: 50
+  max_bin:
+    distribution: int_uniform
+    min: 3
+    max: 500
+  extra_trees:
+    distribution: categorical
+    values:
+      - true
+      - false
+#  parameters.estimator.path_smooth:
+#    distribution: log_uniform
+#    min: -20
+#    max: 5
+#  parameters.estimator.colsample_bytree:
+#    distribution: uniform
+#    min: 0.005
+#    max: 1.0
+#  parameters.estimator.linear_tree:
+#    distribution: categorical
+#    values:
+#      - true
+#      - false
+#  parameters.estimator.feature_fraction_bynode:
+#    distribution: uniform
+#    min: 0.005
+#    max: 1.0
+#  parameters.estimator.drop_rate:
+#    distribution: uniform
+#    min: 0.001
+#    max: 1.0
+#  parameters.estimator.skip_drop:
+#    distribution: uniform
+#    min: 0.001
+#    max: 1.0
+#  parameters.estimator.max_drop:
+#    distribution: int_uniform
+#    min: -1
+#    max: 150
+#  parameters.estimator.uniform_drop:
+#    distribution: categorical
+#    values:
+#      - true
+#      - false
+#  parameters.estimator.xgboost_dart_mode:
+#    distribution: categorical
+#    values:
+#      - true
+#      - false
+#  parameters.estimator.min_gain_to_split:
+#    distribution: log_uniform
+#    min: -20
+#    max: 5
+#  parameters.estimator.min_sum_hessian_in_leaf:
+#    distribution: log_uniform
+#    min: -10
+#    max: 4

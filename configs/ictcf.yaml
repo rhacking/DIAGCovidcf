@@ -1,0 +1,22 @@
+dataset:
+  name: ictcf
+  target: PCR
+  evaluation:
+    n_folds: 5
+    metrics:
+      - roc_auc
+      - accuracy
+      - f1_weighted
+
+preprocessing:
+  imputation:
+    categorical: CONSTANT
+    numeric: MEAN
+  feature_selection:
+    fs_type: RFE
+
+
+model_parameters:
+  boosting_type: dart
+  n_estimators: 40
+  learning_rate: 0.01

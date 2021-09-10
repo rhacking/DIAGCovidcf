@@ -1,0 +1,53 @@
+dataset:
+  name: ictcf
+  target: PCR
+  should_aggregate: false
+  use_visual_features: true
+  use_clinical_features: true
+  feature_value_fraction_required: 0.16
+  validation:
+    cv:
+      n_folds: 10
+      n_repeats: 1
+    metric: roc_auc
+  test:
+    cv:
+      part_name: cohort
+      part: c2
+    metrics:
+      - accuracy
+      - roc_auc
+
+pipeline:
+  estimator_type: LR
+  imputation:
+    categorical: CONSTANT
+    numeric: MEAN
+  feature_selection:
+    fs_type: NONE
+
+parameters:
+  estimator:
+    solver: liblinear
+#    n_estimators: 100
+#    learning_rate: 0.1
+#    max_depth: 0
+#    num_leaves: 31
+#    reg_alpha: 1e-20
+#    reg_lambda: 1e-20
+#    subsample: 1. 0
+#    subsample_freq: 0
+#    min_child_samples: 20
+#    max_bin: 255
+#    extra_trees: false
+#    path_smooth: 1e-20
+#    colsample_bytree: 1.0
+#    linear_tree: false
+#    feature_fraction_bynode: 1.0
+#    drop_rate: 0.1
+#    skip_drop: 0.5
+#    max_drop: 50
+#    uniform_drop: false
+#    xgboost_dart_mode: false
+#    min_gain_to_split: 1e-20
+#    min_sum_hessian_in_leaf: 1e-3

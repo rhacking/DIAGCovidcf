@@ -1,0 +1,35 @@
+dataset:
+  name: cwz
+  target: DIAGNOSIS
+  should_aggregate: false
+  use_visual_features: true
+  use_clinical_features: true
+  feature_value_fraction_required: 0.16
+  metrics:
+    - accuracy
+    - roc_auc
+  early_stopping:
+    metric: roc_auc
+    cv:
+      test_size: 0.2
+      seed: 420
+  test:
+    cv:
+      test_size: 0.2
+      seed: 123
+
+pipeline:
+  estimator_type: LGBM
+  should_stop_early: true
+  imputation:
+    categorical: NONE
+    numeric: NONE
+  feature_selection:
+    fs_type: NONE
+
+parameters:
+  estimator:
+    boosting: goss
+
+meta:
+  model: GOSS

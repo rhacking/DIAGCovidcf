@@ -1,0 +1,20 @@
+\begin{table}
+\centering
+\caption{P-values of one-sided paired t-test between all models. }
+\label{tab:pvalues}
+\begin{tabular}{lllllllll}
+\toprule
+Second &     DT &   GBDT &   KNN5 &     MI &  MI TT &   MICE &   Mean & SHAP zeroing \\
+First        &        &        &        &        &        &        &        &              \\
+\midrule
+DT           &      - &  0.000 &  0.000 &  1.000 &  1.000 &  0.000 &  0.000 &        0.000 \\
+GBDT         &  1.000 &      - &  1.000 &  1.000 &  1.000 &  1.000 &  0.943 &        1.000 \\
+KNN5         &  1.000 &  0.000 &      - &  1.000 &  1.000 &  1.000 &  0.000 &        0.818 \\
+MI           &  0.000 &  0.000 &  0.000 &      - &  0.154 &  0.000 &  0.000 &        0.000 \\
+MI TT        &  0.000 &  0.000 &  0.000 &  0.846 &      - &  0.000 &  0.000 &        0.000 \\
+MICE         &  1.000 &  0.000 &  0.000 &  1.000 &  1.000 &      - &  0.000 &        0.000 \\
+Mean         &  1.000 &  0.057 &  1.000 &  1.000 &  1.000 &  1.000 &      - &        1.000 \\
+SHAP zeroing &  1.000 &  0.000 &  0.182 &  1.000 &  1.000 &  1.000 &  0.000 &            - \\
+\bottomrule
+\end{tabular}
+\end{table}

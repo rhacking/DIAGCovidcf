@@ -1,0 +1,21 @@
+{
+    "os": "Windows-10-10.0.19041-SP0",
+    "python": "3.7.9",
+    "heartbeatAt": "2021-04-01T11:30:57.843185",
+    "startedAt": "2021-04-01T11:30:51.774143",
+    "docker": null,
+    "gpu": "GeForce GTX 1060 6GB",
+    "gpu_count": 1,
+    "cpu_count": 12,
+    "cuda": null,
+    "args": [
+        "-f",
+        "C:\\Users\\Roel\\AppData\\Roaming\\jupyter\\runtime\\kernel-e592d5a1-54d1-435e-a6db-7cf1d915f30f.json"
+    ],
+    "state": "running",
+    "program": "wandb_kfold_test.ipynb",
+    "root": "C:\\Users\\Roel\\Documents\\DIAGCovid\\notebooks",
+    "host": "DESKTOP-D0UR23T",
+    "username": "Roel",
+    "executable": "c:\\users\\roel\\.virtualenvs\\diagcovid-ckc2berq\\scripts\\python.exe"
+}

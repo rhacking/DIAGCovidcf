@@ -1,0 +1,30 @@
+wandb_version: 1
+
+dataset.feature_value_fraction_required:
+  value: 0.14376114501090564
+dataset.name:
+  value: rumc
+dataset.should_aggregate:
+  value: 'false'
+dataset.target:
+  value: PCR
+dataset.test.cv.part:
+  value: test
+dataset.use_clinical_features:
+  value: 'false'
+dataset.use_visual_features:
+  value: 'false'
+dataset.validation.cv.n_folds:
+  value: 9
+dataset.validation.cv.n_repeats:
+  value: 9
+dataset.validation.metric:
+  value: roc_auc
+parameters.estimator.boosting_type:
+  value: dart
+pipeline.feature_selection.fs_type:
+  value: NONE
+pipeline.imputation.categorical:
+  value: NONE
+pipeline.imputation.numeric:
+  value: NONE

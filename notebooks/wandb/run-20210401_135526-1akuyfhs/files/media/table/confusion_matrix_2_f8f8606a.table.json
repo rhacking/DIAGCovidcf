@@ -1,0 +1,1 @@
+{"columns": ["Predicted", "Actual", "Count"], "data": [["setosa", "setosa", 5], ["setosa", "versicolor", 0], ["setosa", "virginica", 0], ["versicolor", "setosa", 0], ["versicolor", "versicolor", 12], ["versicolor", "virginica", 0], ["virginica", "setosa", 0], ["virginica", "versicolor", 0], ["virginica", "virginica", 13]]}

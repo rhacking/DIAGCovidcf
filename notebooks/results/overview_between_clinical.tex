@@ -1,0 +1,13 @@
+\begin{tabular}{lllll}
+\toprule
+Dataset &         cwz_cwz &        cwz_rumc &    ictcf_Liyuan &     ictcf_Union \\
+Experiment             &                 &                 &                 &                 \\
+\midrule
+Base                   &           0.893 &           0.768 &           0.669 &           0.702 \\
+Impute                 &           0.888 &  \textbf{0.800} &  \textbf{0.681} &           0.700 \\
+Optimized              &  \textbf{0.897} &           0.751 &           0.653 &  \textbf{0.720} \\
+SHAP zeroing           &           0.863 &           0.769 &           0.649 &           0.636 \\
+SHAP zeroing optimized &           0.864 &           0.763 &           0.662 &           0.674 \\
+Test-time impute       &           0.858 &           0.760 &           0.658 &           0.647 \\
+\bottomrule
+\end{tabular}

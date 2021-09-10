@@ -1,0 +1,27 @@
+dataset:
+  name: rumc
+  target: DIAGNOSIS
+  evaluation:
+    n_folds: 5
+    metrics:
+      - roc_auc
+
+#pipeline:
+#  - impute:
+#      cls: sklearn.impute.SimpleImputer
+#      params:
+#        strategy: mean
+#  - clf:
+#      cls: lightgbm.sklearn.LGBMClassifier
+#      params:
+#        n_estimators: 100
+#        boosting_type: dart
+
+pipeline: |
+  from sklearn.impute import SimpleImputer
+  from lightgbm.sklearn import LGBMRegressor
+  from sklearn.pipeline import make_pipeline
+  pipeline = make_pipeline(
+    SimpleImputer(strategy='mean'),
+    LGBMRegressor(n_jobs=-1, boosting_type='dart')
+  )

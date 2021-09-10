@@ -1,0 +1,1 @@
+{"columns": ["class", "dataset", "count"], "data": [["setosa", "train", 37], ["setosa", "test", 13], ["versicolor", "train", 45], ["versicolor", "test", 5], ["virginica", "train", 38], ["virginica", "test", 12]]}

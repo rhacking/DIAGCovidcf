@@ -1,0 +1,24 @@
+name: test-sweep
+method: bayes
+metric:
+  name: cv_val_roc_auc
+  goal: maximize
+parameters:
+  dataset.should_aggregate:
+    distribution: categorical
+    values:
+      - true
+      - false
+  dataset.feature_value_fraction_required:
+    distribution: uniform
+    min: 0.01
+    max: 0.5
+  C:
+    distribution: log_uniform
+    min: -5
+    max: 5
+  penalty:
+    distribution: categorical
+    values:
+      - l1
+      - l2

@@ -1,0 +1,1 @@
+{"columns": ["class", "fpr", "tpr"], "data": [["setosa", 0.0, 0.0], ["setosa", 0.0, 1.0], ["setosa", 1.0, 1.0], ["versicolor", 0.0, 0.0], ["versicolor", 0.0, 1.0], ["versicolor", 0.722, 1.0], ["versicolor", 1.0, 1.0], ["virginica", 0.0, 0.0], ["virginica", 0.0, 1.0], ["virginica", 0.706, 1.0], ["virginica", 1.0, 1.0]]}
